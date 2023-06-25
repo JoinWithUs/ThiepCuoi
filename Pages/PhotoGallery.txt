@@ -1,0 +1,16 @@
+<div class="mt-80 px-10">
+    <h3 class="text-center">Photo Gallery</h3>
+
+    <div class="slide-box">
+
+        <div class="autoplay slick-initialized slick-slider">
+            <div class="slick-prev slick-arrow" style="display: block;"><i class="fa fa-angle-left"
+                    aria-hidden="true"></i></div>
+
+            <div class="slick-next slick-arrow" style="display: block;"><i class="fa fa-angle-right"
+                    aria-hidden="true"></i></div>
+        </div>
+
+    </div>
+
+</div>
