@@ -155,6 +155,7 @@ setupResponseBox = function () {
     $("#response_box_page").on("click", "#btn_send_response", function (event) {
         var data = getResponseBoxData();
         var processingMsg = "Lời phản hồi đang được gửi đi. Vui lòng chờ trong giây lát!";
+        var sendingMsg = "Bạn đã gửi phản hồi, vui lòng chờ trong giây lát!";
         var successMsg = "Bạn đã gửi phản hồi thành công!";
         var errorMsg = "Bạn gửi phản hồi không thành công, vui lòng thử lại!";
 
@@ -169,6 +170,7 @@ setupResponseBox = function () {
         }
         else {
             btn_send_response_disabled = true;
+            alert(sendingMsg);
             $.ajax({
                 url: ggSheetUrl,
                 method: "GET",
