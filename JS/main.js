@@ -15,7 +15,7 @@ $(document).ready(function () {
  */
 loadSubPage = function (name, targetId, callbackFn) {
     $.ajax({
-        url: `/Pages/${name}.txt`,
+        url: `/ThiepCuoiOnline/Pages/${name}.txt`,
         method: "GET",
         dataType: 'text',
         success: function (data, textStatus, jqXHR) {
