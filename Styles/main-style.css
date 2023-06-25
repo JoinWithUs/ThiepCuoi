@@ -324,7 +324,7 @@ h3 {
 
 .note-msg div {
     padding: 50px 10px !important;
-    background-image: url("./ThiepCuoiOnline/Static/Images/papyrus.png") !important;
+    background-image: url("../Static/Images/papyrus.png") !important;
     display: block !important;
     text-align: center;
     width: 100%;
@@ -506,7 +506,7 @@ h3 {
 
 .ic-call {
     background-repeat: no-repeat;
-    background-image: url("./ThiepCuoiOnline/Static/Images/ic_call.png") !important;
+    background-image: url("../Static/Images/ic_call.png") !important;
     background-size: contain;
     width: 60px;
     height: 60px;
