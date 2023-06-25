@@ -1,6 +1,6 @@
 <div class="box-phanhoi text-center mt-80 mb-40">
     <div class="mb-20">
-        <img src="..\Static\Images\w2 _1_.png">
+        <img src=".\Static\Images\w2 _1_.png">
     </div>
     <h3 class="text-center">Thông tin phản hồi</h3>
     <div class="text-center px-20">
