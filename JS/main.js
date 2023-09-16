@@ -1,6 +1,5 @@
 $(document).ready(function () {
 
-    loadSubPage("Introduce", "introduce_page");
     loadSubPage("PhotoGallery", "photo_gallery_page");
     loadSubPage("ResponseBox", "response_box_page", function () {
         setupResponseBox();
@@ -8,6 +7,7 @@ $(document).ready(function () {
 
     setupCounter();
     setupCalendar();
+    document.getElementById("appMomo").onclick = openStoreAction;
 });
 
 /**
@@ -30,7 +30,7 @@ loadSubPage = function (name, targetId, callbackFn) {
  * Cài đặt bộ đếm thời gian
  */
 setupCounter = function () {
-    let time = $("div.countdown-time").text();
+    let time = "2023-10-20T17:00:00";
     var countDownDate = new Date(time).getTime();
 
     // Update the count down every 1 second
@@ -204,8 +204,7 @@ getResponseBoxData = function () {
         // customer_name: "nmtuan2",
         // attend_status: "Tham dự",
         // attendee_number: "1",
-        // transport_type: "tự túc",
-        // customer_phone: "123"
+        // customer_wishes: ""
     }
     var formFields = $("#response_box_page .form-control");
 
@@ -218,4 +217,52 @@ getResponseBoxData = function () {
     });
 
     return data;
+}
+
+//sự kiện mở app
+openAppAction = function () {
+    var buttonApp = this;
+    var a = null;
+    const routeParam = document.URL.match(/invite\/.+/)[0].split('/')[1];
+    const token = routeParam.split('?')[0];
+    const ua = window.navigator.userAgent;
+    var appUrl = buttonApp.getAttribute("androidappurl") + token;
+    var storeLink = buttonApp.getAttribute("AndroidStoreUrl");
+
+    if (/iPad|iPhone|iPod/.test(ua)) {
+        appUrl = buttonApp.getAttribute("IOSAppUrl") + token;
+        storeLink = buttonApp.getAttribute("IOSStoreUrl");
+    }
+
+    document.getElementsByTagName('body')[0].insertAdjacentHTML('beforeEnd', '<a id="linkApp" style="display:none" target="_blank" href="javascript:void(0)">')
+
+    a = document.getElementById('linkApp');
+    a.href = appUrl;
+    a.click();
+
+    //neu khong the mo app thi mo store (doi 3s)
+    setTimeout(function () {
+        if (document.hidden == false) {
+            window.location = storeLink;
+        }
+    }, 3000);
+}
+
+//sự kiện mở store
+openStoreAction = function () {
+    var buttonApp = this;
+    var a = null;
+    var appUrl = null
+    const ua = window.navigator.userAgent;
+
+    if (/iPad|iPhone|iPod/.test(ua)) {
+        appUrl = buttonApp.getAttribute("IOSStoreUrl");
+    } else {
+        appUrl = buttonApp.getAttribute("AndroidStoreUrl");
+    }
+
+    document.getElementsByTagName('body')[0].insertAdjacentHTML('beforeEnd', '<a id="linkApp" style="display:none" target="_blank" href="javascript:void(0)">')
+    a = document.getElementById('linkApp');
+    a.href = appUrl;
+    a.click();
 }

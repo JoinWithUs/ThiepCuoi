@@ -1,10 +1,21 @@
-html {
-    background-color: #f7f7f7;
+:root {
+    --main-color: #94554C;
+    --second-color: #AA6B65;
+    --grey1: #808080;
+    --white: #fff;
+    --max-width: 100vw;
+}
+
+@media only screen and (min-width: 529px) {
+    :root {
+        --max-width: 528px;
+    }
 }
 
 body {
-    max-width: 520px;
+    max-width: var(--max-width);
     margin: auto;
+    overflow-x: auto;
 }
 
 body,
@@ -13,9 +24,9 @@ textarea,
 button,
 select {
     font-size: 16px;
-    font-family: Maven Pro;
-    color: #666;
-    line-height: 1.8;
+    font-family: Roboto;
+    color: #fff;
+    line-height: 1.4;
 }
 
 img {
@@ -26,6 +37,22 @@ img {
 img {
     max-width: 100%;
     max-height: 100%;
+}
+
+.mt-8 {
+    margin-top: 8px;
+}
+
+.mb-8 {
+    margin-bottom: 8px;
+}
+
+.mt-12 {
+    margin-top: 12px;
+}
+
+.mt-16 {
+    margin-top: 16px;
 }
 
 .mt-20 {
@@ -42,6 +69,10 @@ img {
 
 .mb-30 {
     margin-bottom: 30px;
+}
+
+.mt-60 {
+    margin-top: 60px;
 }
 
 .mt-80 {
@@ -68,8 +99,16 @@ img {
     padding: 0 40px;
 }
 
+.pb-8 {
+    padding-bottom: 8px;
+}
+
 .pb-20 {
     padding-bottom: 20px;
+}
+
+.pb-60 {
+    padding-bottom: 60px;
 }
 
 .font-18 {
@@ -84,22 +123,147 @@ img {
     height: 55px;
     font-size: 18px;
     margin-top: 8px;
+    color: #1e2553;
+    background-color: #fff;
 }
 
 .w-25 {
     width: 25px;
 }
 
-h3 {
-    color: var(--main-color);
-}
-
-.color-main {
-    color: var(--main-color);
-}
-
 .color-second {
-    color: #666666bf;
+    color: #666666;
+}
+
+/* style chung */
+#main_content {
+    background-color: #1e2553;
+}
+
+.box-wrapper {
+    margin-top: 32px;
+}
+
+.box-wrapper .box-title {
+    font-size: 28px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* wedding-cover */
+.wedding-cover {
+    background-image: url("../Static/Images/img-bride-broom.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    max-width: 100%;
+    height: calc(var(--max-width) / 293 * 162);
+}
+
+/* wedding-invitation-content */
+.wedding-invitation-content {
+    background-image: url("../Static/Images/img-invitation.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    max-width: 100%;
+    height: calc(var(--max-width) / 572 * 683);
+}
+
+/* line */
+.line {
+    display: flex;
+    justify-content: center;
+    margin: 32px 0;
+}
+
+.line .line-heart {
+    background-image: url("../Static/Images/img-line.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 20%;
+    height: calc(var(--max-width) / 5 / 231 * 62);
+}
+
+/* Lời nhắn nhủ */
+.note-msg div {
+    text-align: center;
+    width: 100%;
+}
+
+/* Đặt lịch nhắc */
+.count-down-wrap {
+    display: inline-block;
+}
+
+.count-down-wrap .time-left {
+    display: inline-block;
+    position: relative;
+    font-size: 40px;
+    font-weight: 700;
+    padding: 20px 5px;
+    text-align: center;
+    height: 115px;
+    width: 80px;
+    margin: 10px 5px 0px;
+    border-radius: 10px;
+    cursor: pointer;
+    /* border: 1px solid var(--main-color); */
+    border: 1px solid #fff;
+    box-shadow: 0 3px 3px #0003;
+}
+
+.count-down-wrap .time-left span.num {
+    padding-bottom: 10px;
+}
+
+.count-down-wrap .num {
+    /* color: var(--main-color) !important; */
+    color: #fff !important;
+}
+
+.count-down-wrap .time-left span {
+    display: block;
+    line-height: 1em;
+}
+
+.count-down-wrap .time-left span.count-label {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.count-down-wrap .time-left span {
+    display: block;
+    line-height: 1em;
+}
+
+/* album ảnh */
+.slide-box {
+    margin-top: 25px;
+}
+
+.slick-prev {
+    position: absolute;
+    left: 0px;
+    top: 48%;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.slick-next {
+    position: absolute;
+    right: 0px;
+    top: 48%;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+/* wedding-timeline */
+.wedding-timeline {
+    background-image: url("../Static/Images/img-timeline.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    max-width: 100%;
+    height: calc(var(--max-width) / 4692 * 4763);
 }
 
 .title h3 span {
@@ -111,6 +275,11 @@ h3 {
 
 .box-ab-theme-1 .title {
     margin-bottom: 25px;
+}
+
+.box-ab-theme-1 .title h3:first {
+    padding-bottom: 5px;
+    margin-top: 70px;
 }
 
 .box-ab-theme-1 .title h3 {
@@ -157,38 +326,6 @@ h3 {
     padding-right: 20px;
 }
 
-.line {
-    display: flex;
-    justify-content: center;
-}
-
-.line-cap {
-    padding: 0 10px;
-    border-top: 1.5px solid #6663;
-    height: 1.5px;
-    line-height: 0.1em;
-    display: flex;
-    justify-content: center;
-    width: 30%;
-}
-
-.line-cap div {
-    position: relative;
-    background-color: #fff;
-    padding: 0px 5px;
-    height: 25px;
-    margin-top: -12px;
-    text-align: center;
-}
-
-.line .heart1 {
-    position: relative;
-}
-
-.line .heart2 {
-    margin-left: -20px;
-}
-
 .love-icon {
     width: 46px;
 }
@@ -219,69 +356,8 @@ h3 {
     width: 16px;
 }
 
-.slide-box {
-    margin-top: 25px;
-}
 
-.slick-prev {
-    position: absolute;
-    left: 0px;
-    top: 48%;
-    cursor: pointer;
-    z-index: 1000;
-}
 
-.slick-next {
-    position: absolute;
-    right: 0px;
-    top: 48%;
-    cursor: pointer;
-    z-index: 1000;
-}
-
-.count-down-wrap {
-    display: inline-block;
-}
-
-.count-down-wrap .time-left {
-    display: inline-block;
-    position: relative;
-    font-size: 40px;
-    font-weight: 700;
-    padding: 20px 5px;
-    text-align: center;
-    height: 115px;
-    width: 80px;
-    margin: 10px 5px;
-    border-radius: 10px;
-    cursor: pointer;
-    border: 1px solid var(--main-color);
-    box-shadow: 0 3px 3px #0003;
-}
-
-.count-down-wrap .time-left span.num {
-    padding-bottom: 10px;
-}
-
-.count-down-wrap .num {
-    color: var(--main-color) !important;
-}
-
-.count-down-wrap .time-left span {
-    display: block;
-    line-height: 1em;
-}
-
-.count-down-wrap .time-left span.count-label {
-    font-size: 14px;
-    text-transform: uppercase;
-    font-weight: 500;
-}
-
-.count-down-wrap .time-left span {
-    display: block;
-    line-height: 1em;
-}
 
 .btn-save-cal {
     margin-top: 15px;
@@ -290,8 +366,10 @@ h3 {
 .addevent {
     background-color: #fff;
     font-size: 16px;
-    color: var(--main-color);
-    border: 1px solid var(--main-color);
+    /* color: var(--main-color);
+    border: 1px solid var(--main-color); */
+    color: #1e2553;
+    border: 1px solid #fff;
     display: inline-block;
     box-shadow: 0.25px 0.75px 2.75px 0.25px #ddd;
     visibility: visible;
@@ -322,28 +400,13 @@ h3 {
     top: 20px;
 }
 
-.note-msg div {
-    padding: 50px 10px !important;
-    background-image: url("../Static/Images/papyrus.png") !important;
-    display: block !important;
-    text-align: center;
-    width: 100%;
-}
-
-.note-msg div h1 {
-    font-size: 20px !important;
-    line-height: 1.5em !important;
-    letter-spacing: 0px !important;
-    color: #666 !important;
-    text-transform: none !important;
-}
-
 .wrapper-ts {
     display: inline-flex;
     align-items: center;
     justify-content: space-evenly;
     border-radius: 5px;
     padding: 20px 15px;
+    height: 180px;
 }
 
 .wrapper-ts input[type="radio"] {
@@ -353,6 +416,7 @@ h3 {
 #option-1:checked:checked~.option-1,
 #option-2:checked:checked~.option-2 {
     border-color: var(--main-color);
+    height: 120px;
 }
 
 .wrapper-ts .option span {
@@ -449,6 +513,7 @@ h3 {
 .wrapper-ts-boxp .optionboxp span {
     font-size: 13px;
     text-align: center;
+    color: #1e2553;
 }
 
 .fix-info {
@@ -506,7 +571,7 @@ h3 {
 
 .ic-call {
     background-repeat: no-repeat;
-    background-image: url("../Static/Images/ic_call.png") !important;
+    background-image: url("../Static/Images/img-phone.png") !important;
     background-size: contain;
     width: 60px;
     height: 60px;

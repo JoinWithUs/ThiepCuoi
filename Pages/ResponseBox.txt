@@ -1,14 +1,11 @@
-<div class="box-phanhoi text-center mt-80 mb-40">
-    <div class="mb-20">
-        <img src=".\Static\Images\w2 _1_.png">
-    </div>
-    <h3 class="text-center">Thông tin phản hồi</h3>
-    <div class="text-center px-20">
-        <span class="">Để thuận tiện cho việc sắp xếp chỗ ngồi, vui lòng phản hồi giúp vợ chồng mình
+<div>
+    <div class="box-title">Thông tin phản hồi</div>
+    <div class="text-center px-20 mt-8">
+        <span class="">Để thuận tiện cho việc sắp xếp chỗ ngồi,<br> vui lòng phản hồi giúp chúng mình
             nhé!</span>
     </div>
 
-    <div class="wrapper-ts mt-20">
+    <div class="wrapper-ts">
         <input type="radio" name="select" id="option-1" value="Nhà gái" checked="">
         <input type="radio" name="select" id="option-2" value="Nhà trai">
         <label for="option-1" class="option option-1 activep">
@@ -187,49 +184,14 @@
             </div>
         </div>
 
-        <div class="text-center mt-20 element-hide-rap">
+        <div class="text-center mt-20">
             <div>
-                <span class="font-18">Phương tiện đi lại</span>
-                <select id="id_field_pt" class="form-control" name="transport_type">
-                    <option value="Tự túc">
-                        Tự túc
-                    </option>
-                    <option value="Đi chung">
-                        Đi chung
-                    </option>
-                </select>
+                <span class="font-18">Lời chúc của bạn</span>
+                <textarea class="form-control" name="customer_wishes" rows=5></textarea>
             </div>
         </div>
 
-        <div class="text-center element-hide-rap mt-20  hide-pt  fix-info">
-            <div>
-                <span class="font-18">Số điện thoại</span>
-                <input type="text" name="customer_phone" class="form-control input_ptxe2">
-            </div>
-        </div>
-
-        <div class="box-pt-info element-hide-rap mt-20  hide-pt ">
-            <div class="font-14">
-                <div>
-                    <span>Để thuận tiện cho việc sắp xếp, đưa đón khách đi tiệc cưới, bạn vui lòng cung cấp
-                        số điện
-                        thoại giúp vợ chồng mình nhé!</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="box-pt-info mt-20  hide-pt hidden">
-            <div class="font-14">
-                <div>
-                    <span><strong class="color-red">Thông tin chuyến đi</strong> </span> <br>
-                    <span><strong>Thời gian xuất phát:</strong> </span> <br>
-                    <span><strong>Địa chỉ:</strong> </span> <br>
-                    <span><strong>Người liên hệ:</strong> - </span>
-                </div>
-            </div>
-        </div>
-
-        <div class="btn-reciver-rsvp mt-40">
+        <div class="btn-reciver-rsvp mt-20 pb-8">
             <button class="gf_button gf_button1 gf_buttonrsvp" id="btn_send_response">Gửi Phản Hồi</button>
         </div>
 

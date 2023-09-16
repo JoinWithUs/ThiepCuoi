@@ -12,69 +12,41 @@
     <link rel="stylesheet" href=".\Static\Libs\bootstrap-3.4.1-dist\css\bootstrap.min.css">
 
     <!-- Other css -->
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Maven+Pro" />
-    <style type="text/css">
-        :root {
-            --main-color: #94554C;
-            --second-color: #AA6B65;
-            --grey1: #808080;
-            --white: #fff;
-        }
-
-        body {
-            background-color: #FDEADE;
-        }
-
-        .line-cap2 div {
-            background-color: #FDEADE !important;
-        }
-
-        .line-cap div {
-            background-color: #FDEADE !important;
-        }
-
-        .line-caplv-left div {
-            background-color: #FDEADE !important;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto" />
     <link rel="stylesheet" href=".\Styles\addtocalendar.css">
     <link rel="stylesheet" href=".\Styles\main-style.css">
 
-
-    <title>Chú rể và Nguyệt Hằng - Thiệp cưới Online</title>
+    <title>Wedding Invitation</title>
 </head>
 
 <body>
     <div id="main_page">
         <!-- Nội dung chính -->
         <div id="main_content">
-            <!-- Cover -->
-            <div class="cover">
+            <!-- wedding-cover -->
+            <div class="wedding-cover"></div>
+
+            <!-- wedding-invitation-content -->
+            <div class="wedding-invitation-content"></div>
+
+            <!-- line -->
+            <div class="line">
+                <div class="line-heart"></div>
             </div>
 
-            <!-- Introduce -->
-            <div class="introduce mb-20 mt-20" id="introduce_page">
-            </div>
-
-            <!-- Thiệp báo hỷ -->
-            <div>
-                <img src="https://app.thesimple.vn/uploads/contact/adminbh/6465dede6efc5-Nắng-(Tulip)-baohy.jpg">
-            </div>
-
-            <!-- Photo gallery: TODO -->
-            <div class="photo-gallery" id="photo_gallery_page">
-            </div>
-
-            <!-- Nhà hàng -->
-            <div class="mt-80">
-                <img src="https://app.thesimple.vn/uploads/contact/admin/6465dede6ddfd-Nắng-(Tulip)-nhahang.jpg">
+            <!-- Lời nhắn nhủ -->
+            <div class="note-msg mt-20 ">
+                <div>
+                    Đám cưới của chúng mình sẽ vui hơn nhiều khi có bạn.
+                </div>
+                <div>
+                    Cảm ơn bạn vì đã trở thành một phần quan trọng <br> trong ngày đặc biệt của chúng mình!
+                </div>
             </div>
 
             <!-- Đặt lịch nhắc -->
-            <div class="count-time-date mt-80">
-                <div>
-                    <h4 class="text-center">Mình cùng đếm ngược thời gian</h4>
-                </div>
+            <div class="box-wrapper count-time-date">
+                <div class="box-title">Cùng đếm ngược nhé!</div>
 
                 <div class="box-time text-center">
                     <div class="count-down-wrap">
@@ -106,76 +78,63 @@
                 </div>
             </div>
 
-            <!-- Lời nhắn nhủ -->
-            <div class="note-msg mt-80 ">
-                <div>
-                    <h1>Đám cưới của chúng tôi chắc chắn sẽ kém vui đi rất nhiều nếu thiếu đi sự hiện diện của bạn. Cảm
-                        ơn bạn vì đã trở thành một phần quan trọng trong ngày đặc biệt của chúng tôi!</h1>
-                </div>
+            <!-- Photo gallery: TODO -->
+            <div class="box-wrapper photo-gallery" id="photo_gallery_page">
             </div>
 
-            <!-- box phản hồi: TODO -->
-            <div class="response-box" id="response_box_page">
+            <!-- wedding-timeline -->
+            <div class="wedding-timeline"></div>
 
+            <!-- box phản hồi -->
+            <div class="box-wrapper response-box text-center" id="response_box_page">
             </div>
 
-            <!-- Gift card: TODO -->
-            <div class="mt-80">
-                <div>
-                    <img src=".\Static\Images\r1 _1_.png">
-                </div>
+            <!-- line -->
+            <div class="line">
+                <div class="line-heart"></div>
+            </div>
 
-                <div class="text-center mt-40 mb-20">
-                    <h3>Gửi lời chúc đến đôi uyên ương</h3>
-                </div>
-                <div class="stk text-center">
+            <!-- Gift card -->
+            <div class="box-wrapper">
+                <div class="box-title">Thông tin khác</div>
+
+                <div class="stk text-center mt-16">
                     <span>
-                        <b>Lê Thanh Vinh</b>
+                        <b>Phan Nguyệt Hằng</b>
                     </span>
                     <br>
                     <span>
-                        Vietcombank - 162587952
-                    </span>
-                </div>
-
-                <hr class="dotted">
-                <div class="stk text-center">
-                    <span>
-                        <b>Hoàng Linh Chi</b>
-                    </span>
-                    <br>
-                    <span>
-                        Techcombank - 3265974516
+                        ACB - 19265537
                     </span>
                 </div>
 
                 <hr class="dotted">
                 <div class="mt-20 momo">
-                    <a href="https://momo.vn/chuyen-tien" target="_blank"><img src=".\Static\Images\momo2.png"></a>
+                    <div id="appMomo" 
+                    AndroidStoreUrl="https://play.google.com/store/apps/details?id=com.mservice.momotransfer&hl=vi&gl=US"
+                    IOSStoreUrl="https://apps.apple.com/vn/app/momo-chuy%E1%BB%83n-ti%E1%BB%81n-thanh-to%C3%A1n/id918751511?l=vi">
+                        <img src=".\Static\Images\momo2.png">
+                    </div>
                 </div>
             </div>
 
             <!-- Địa chỉ -->
-            <div class="mt-80 px-15">
+            <div class="mt-60 px-15">
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.681487793131!2d105.82142217591002!3d21.005401088579145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ad06d862eaab%3A0xc9d5f93e086c8b02!2sMipec%20Tower!5e0!3m2!1svi!2s!4v1687623461249!5m2!1svi!2s"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1509.7970677849694!2d105.8150427802242!3d21.075515251788726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135aaede963b7e7%3A0x3945a8dcf037f761!2zVHJ1bmcgdMOibSBI4buZaSBuZ2jhu4sgVGnhu4djIGPGsOG7m2kgRm9yZXZlcm1hcms!5e0!3m2!1svi!2sus!4v1694883285986!5m2!1svi!2sus"
                     width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
 
             <!-- Liên hệ -->
-            <div class="mt-80 pb-20">
-                <h3 class="text-center">Thông tin liên hệ</h3>
+            <div class="box-wrapper pb-60">
+                <div class="box-title">Thông tin liên hệ</div>
 
-                <div class="mt-20">
-                    <div>
-                        <img src="https://app.thesimple.vn/uploads/contact/6465dede6c7b1-Footer_01.jpg" alt="">
-                    </div>
-
+                <div class="mt-12">
                     <div class="col-xs-6">
-                        <div class="text-center color-main font-18">
-                            <div style="font-weight: 600;">LIÊN HỆ CHÚ RỂ</div>
-                            <div>123456</div>
+                        <div class="text-center font-18">
+                            <div style="font-weight: 500;">Chú rể<br>Giang Sơn</div>
+                            <div class="mt-12">0396945990</div>
                             <div class="mt-20" style="display: flex; justify-content: center;">
                                 <div class="ic-call"></div>
                             </div>
@@ -183,9 +142,9 @@
                     </div>
 
                     <div class="col-xs-6">
-                        <div class="text-center color-main font-18">
-                            <div style="font-weight: 600;">LIÊN HỆ CÔ DÂU</div>
-                            <div>123456</div>
+                        <div class="text-center font-18">
+                            <div style="font-weight: 500;">Cô dâu<br>Nguyệt Hằng</div>
+                            <div class="mt-12">0867006966</div>
                             <div class="mt-20" style="display: flex; justify-content: center;">
                                 <div class="ic-call"></div>
                             </div>
@@ -198,23 +157,18 @@
 
         <!-- Audio -->
         <audio id="bg_audio" autoplay="true" loop="true">
-            <source src="https://github.com/JoinWithUs/ThiepCuoi/blob/main/Static/Audios/I_Do-Duc_Phuc.mp3?raw=true" type="audio/mp3">
+            <source src="https://github.com/JoinWithUs/ThiepCuoi/blob/main/Static/Audios/I_Do-Duc_Phuc.mp3?raw=true"
+                type="audio/mp3">
         </audio>
-
-        <!-- Other controls -->
-
-        <!-- Happy Day -->
-        <div class="countdown-time hidden">2023-10-23T10:00:00</div>
     </div>
 
     <!-- Libs js -->
     <script type="text/javascript" src=".\Static\Libs\jQuery\jQuery_3.7.0.min.js"></script>
     <script type="text/javascript" src=".\Static\Libs\bootstrap-3.4.1-dist\js\bootstrap.min.js"></script>
-    <!-- Other js -->
 
+    <!-- Other js -->
     <script type="text/javascript" src=".\JS\prototype.js"></script>
     <script type="text/javascript" src=".\JS\main.js"></script>
-
 </body>
 
 </html>
