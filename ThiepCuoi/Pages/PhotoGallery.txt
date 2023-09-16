@@ -1,0 +1,16 @@
+<div>
+    <div class="box-title">Album Prewedding</div>
+
+    <div class="slide-box">
+
+        <div class="autoplay slick-initialized slick-slider">
+            <div class="slick-prev slick-arrow" style="display: block;"><i class="fa fa-angle-left"
+                    aria-hidden="true"></i></div>
+
+            <div class="slick-next slick-arrow" style="display: block;"><i class="fa fa-angle-right"
+                    aria-hidden="true"></i></div>
+        </div>
+
+    </div>
+
+</div>
