@@ -1,33 +1,18 @@
 $(document).ready(function () {
-    
+
     setupCounter();
     setupCalendar();
+    setupPhotoGallery();
     setupResponseBox();
-    
+
     document.getElementById("appMomo").onclick = openStoreAction;
 });
-
-/**
- * Load các trang nhỏ
- */
-loadSubPage = function (name, targetId, callbackFn) {
-    $.ajax({
-        url: `./Pages/${name}.txt`,
-        method: "GET",
-        dataType: 'text',
-        success: function (data, textStatus, jqXHR) {
-            $(`#main_content #${targetId}`).html(data);
-
-            typeof callbackFn == "function" && callbackFn();
-        }
-    })
-};
 
 /**
  * Cài đặt bộ đếm thời gian
  */
 setupCounter = function () {
-    let time = "2023-10-20T17:00:00";
+    var time = "2023-10-20T17:00:00";
     var countDownDate = new Date(time).getTime();
 
     // Update the count down every 1 second
@@ -115,11 +100,81 @@ setupCalendar = function () {
 }
 
 /**
+ * Cài đặt phần album ảnh
+ */
+setupPhotoGallery = function () {
+    var slideIndex = 1;
+    var touchstartX = 0; // điểm bắt đầu
+    var touchendX = 0; // điểm kết thúc
+    var photoGalleryImages = [
+        "DSC_0981", "DSC_1023", "DSC_1238",
+        "DSC_1326"
+    ];
+
+    // build ra danh sách các ảnh
+    for (var i = 0; i < photoGalleryImages.length; i++) {
+        var imgName = photoGalleryImages[i],
+            imgHtml = `<div class="mySlides">
+                <div class="wedding-image" style="background-image: url('` + `./Uploads/Images/${imgName}.jpg` + `');"></div>
+            </div>`;
+
+        $("#photo_gallery_page .slideshow-container").append(imgHtml);
+    }
+
+    function plusSlides(n) {
+        slideIndex += n;
+
+        showSlides(slideIndex);
+    }
+
+    function showSlides(n) {
+        var slides = $("#photo_gallery_page .mySlides");
+
+        if (n > slides.length) {
+            slideIndex = 1;
+        }
+
+        if (n < 1) {
+            slideIndex = slides.length
+        }
+
+        for (var i = 0; i < slides.length; i++) {
+            $(slides[i]).hide();
+        }
+
+        $(slides[slideIndex - 1]).show();
+    }
+
+    $("#photo_gallery_page .slideshow-container").on("click", ".prev", plusSlides.bind(this, -1));
+
+    $("#photo_gallery_page .slideshow-container").on("click", ".next", plusSlides.bind(this, 1));
+
+    $("#photo_gallery_page .slideshow-container").on("touchstart", function (evt) {
+        touchstartX = evt.changedTouches[0].screenX;
+    });
+
+    $("#photo_gallery_page .slideshow-container").on("touchend", function (evt) {
+        touchendX = e.changedTouches[0].screenX;
+
+        // swiped left
+        if (touchendX < touchstartX - 50) {
+            plusSlides(1);
+        }
+        // swiped right
+        if (touchendX - 50 > touchstartX) {
+            plusSlides(-1);
+        }
+    });
+
+    // hiển thị mặc định ảnh đầu tiên
+    showSlides(slideIndex);
+}
+
+/**
  * Cài đặt form phản hồi
  */
 setupResponseBox = function () {
     var ggSheetUrl = "https://script.google.com/macros/s/AKfycbwXuTKarcluP8GfRo-vqdwWlP3l9Q6VpDq8LU0Bl-OuX-vU7URbusBFTx-xS-stzDx5ig/exec";
-    var btn_send_response_disabled = false;
 
     $(".form-control[name='customer_type']").val("Nhà gái");
     $(".form-control[name='attend_status']").val("Tham dự");
@@ -150,24 +205,21 @@ setupResponseBox = function () {
 
     // event gửi phản hồi
     $("#response_box_page").on("click", "#btn_send_response", function (event) {
+        var btnSend = this;
         var data = getResponseBoxData();
-        var processingMsg = "Lời phản hồi đang được gửi đi. Vui lòng chờ trong giây lát!";
-        var sendingMsg = "Bạn đã gửi phản hồi, vui lòng chờ trong giây lát!";
-        var successMsg = "Bạn đã gửi phản hồi thành công!";
+        var originMsg = "Gửi phản hồi";
+        var processingMsg = "Đang gửi phản hồi";
+        var successMsg = "Đã gửi phản hồi";
         var errorMsg = "Bạn gửi phản hồi không thành công, vui lòng thử lại!";
-
-        if (btn_send_response_disabled) {
-            alert(processingMsg);
-            return;
-        }
 
         if (!data["customer_name"]) {
             alert("Vui lòng nhập Tên khách mời!");
             $(".form-control[name='customer_name']").focus();
         }
         else {
-            btn_send_response_disabled = true;
-            alert(sendingMsg);
+            $(btnSend).text(processingMsg);
+            $(btnSend).addClass("disabled");
+
             $.ajax({
                 url: ggSheetUrl,
                 method: "GET",
@@ -175,17 +227,18 @@ setupResponseBox = function () {
                 data: data,
                 success: function (response) {
                     if (response["result"] == "success") {
-                        alert(successMsg);
+                        $(btnSend).text(successMsg);
                     }
                     else {
+                        $(btnSend).text(originMsg);
+                        $(btnSend).removeClass("disabled");
                         alert(errorMsg);
                     }
                 },
                 error: function () {
+                    $(btnSend).text(originMsg);
+                    $(btnSend).removeClass("disabled");
                     alert(errorMsg);
-                },
-                complete: function () {
-                    btn_send_response_disabled = false;
                 }
             });
         }
@@ -216,7 +269,9 @@ getResponseBoxData = function () {
     return data;
 }
 
-//sự kiện mở app
+/**
+ * sự kiện mở app
+ */
 openAppAction = function () {
     var buttonApp = this;
     var a = null;
@@ -245,7 +300,9 @@ openAppAction = function () {
     }, 3000);
 }
 
-//sự kiện mở store
+/**
+ * sự kiện mở store
+ */
 openStoreAction = function () {
     var buttonApp = this;
     var a = null;

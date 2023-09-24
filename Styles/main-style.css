@@ -40,47 +40,47 @@ img {
 }
 
 .mt-8 {
-    margin-top: 8px;
+    margin-top: 8px !important;
 }
 
 .mb-8 {
-    margin-bottom: 8px;
+    margin-bottom: 8px !important;
 }
 
 .mt-12 {
-    margin-top: 12px;
+    margin-top: 12px !important;
 }
 
 .mt-16 {
-    margin-top: 16px;
+    margin-top: 16px !important;
 }
 
 .mt-20 {
-    margin-top: 20px;
+    margin-top: 20px !important;
 }
 
 .mb-20 {
-    margin-bottom: 20px;
+    margin-bottom: 20px !important;
 }
 
 .mt-40 {
-    margin-top: 40px;
+    margin-top: 40px !important;
 }
 
 .mb-30 {
-    margin-bottom: 30px;
+    margin-bottom: 30px !important;
 }
 
 .mt-60 {
-    margin-top: 60px;
+    margin-top: 60px !important;
 }
 
 .mt-80 {
-    margin-top: 80px;
+    margin-top: 80px !important;
 }
 
 .mb-40 {
-    margin-bottom: 40px;
+    margin-bottom: 40px !important;
 }
 
 .px-10 {
@@ -100,15 +100,15 @@ img {
 }
 
 .pb-8 {
-    padding-bottom: 8px;
+    padding-bottom: 8px !important;
 }
 
 .pb-20 {
-    padding-bottom: 20px;
+    padding-bottom: 20px !important;
 }
 
 .pb-60 {
-    padding-bottom: 60px;
+    padding-bottom: 60px !important;
 }
 
 .font-18 {
@@ -203,12 +203,11 @@ img {
     text-align: center;
     height: 115px;
     width: 80px;
-    margin: 10px 5px 0px;
+    margin: 10px 8px 0px;
     border-radius: 10px;
     cursor: pointer;
-    /* border: 1px solid var(--main-color); */
     border: 1px solid #fff;
-    box-shadow: 0 3px 3px #0003;
+    box-shadow: 1px 2px 6px #f5f5f5;
 }
 
 .count-down-wrap .time-left span.num {
@@ -216,7 +215,6 @@ img {
 }
 
 .count-down-wrap .num {
-    /* color: var(--main-color) !important; */
     color: #fff !important;
 }
 
@@ -237,24 +235,77 @@ img {
 }
 
 /* album ảnh */
-.slide-box {
-    margin-top: 25px;
+/* Slideshow container */
+.slideshow-container {
+    max-width: var(--max-width);
+    position: relative;
+    margin: auto;
 }
 
-.slick-prev {
-    position: absolute;
-    left: 0px;
-    top: 48%;
-    cursor: pointer;
-    z-index: 1000;
+/* Hide the images by default */
+.slideshow-container .mySlides {
+    display: none;
 }
 
-.slick-next {
-    position: absolute;
-    right: 0px;
-    top: 48%;
+/* Fading animation */
+.slideshow-container .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+.slideshow-container .wedding-image {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 100%;
+    height: 800px;
+}
+
+/* Next & previous buttons */
+.slideshow-container .prev,
+.slideshow-container .next {
     cursor: pointer;
-    z-index: 1000;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.slideshow-container .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.slideshow-container .prev:hover,
+.slideshow-container .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+    .slideshow-container .prev,
+    .slideshow-container .next {
+        font-size: 11px
+    }
 }
 
 /* wedding-timeline */
@@ -266,98 +317,9 @@ img {
     height: calc(var(--max-width) / 4692 * 4763);
 }
 
-.title h3 span {
-    font-size: 34px;
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
-    text-underline-offset: 4px;
-}
-
-.box-ab-theme-1 .title {
-    margin-bottom: 25px;
-}
-
-.box-ab-theme-1 .title h3:first {
-    padding-bottom: 5px;
-    margin-top: 70px;
-}
-
-.box-ab-theme-1 .title h3 {
-    padding-bottom: 5px;
-    margin-top: 70px;
-}
-
-.box-ab-theme-1 .title h3 span {
-    /* border-bottom: 1px solid var(--main-color); */
-    padding-bottom: 5px;
-}
-
-.box-ab-theme-1 .ab-img {
-    display: flex;
-    justify-content: center;
-    padding-left: 25px;
-    padding-right: 25px;
-}
-
-.ab-img .text-verticle h3 {
-    margin-right: 9px;
-    line-height: 31px;
-    margin-top: -7px;
-}
-
-.box-ab-theme-1 .ab-img .img {
-    width: 45%;
-    margin-right: 14px;
-}
-
-.ab-fill .name {
-    font-size: 24px;
-    color: var(--main-color);
-    margin-bottom: 2px;
-    line-height: 18px;
-}
-
-.ab-fill .date {
-    margin-bottom: 5px;
-}
-
-.ab-fill .text {
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
 .love-icon {
     width: 46px;
 }
-
-.box-ab-theme-1 .ab-end {
-    align-items: flex-end;
-}
-
-.ab-img-bt .img img {
-    border-top-right-radius: 50%;
-    border-top-left-radius: 50%;
-    border-bottom-right-radius: 0%;
-    border-bottom-left-radius: 0%;
-}
-
-.ab-img .img img {
-    border-bottom-left-radius: 50%;
-    border-bottom-right-radius: 50%;
-}
-
-.box-ab-theme-1 .ab-end h3 {
-    margin-bottom: -7px;
-    margin-top: 0px;
-    /* margin-left: 9px; */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 16px;
-}
-
-
-
 
 .btn-save-cal {
     margin-top: 15px;
@@ -371,11 +333,18 @@ img {
     color: #1e2553;
     border: 1px solid #fff;
     display: inline-block;
-    box-shadow: 0.25px 0.75px 2.75px 0.25px #ddd;
+    box-shadow: 0px 1px 3px #f5f5f5;
     visibility: visible;
     position: relative;
     border-radius: 5px;
     cursor: pointer;
+    opacity: 0.9;
+}
+
+.addevent:focus,
+.addevent:hover {
+    background-color: #fff !important;
+    opacity: 1;
 }
 
 .addevent span {
@@ -416,7 +385,7 @@ img {
 #option-1:checked:checked~.option-1,
 #option-2:checked:checked~.option-2 {
     border-color: var(--main-color);
-    height: 120px;
+    height: 125px;
 }
 
 .wrapper-ts .option span {
@@ -536,22 +505,26 @@ img {
 
 .gf_button {
     font-weight: 400;
-    color: #FFFFFF;
-    background-color: var(--main-color);
-    border-style: solid;
     font-size: 22px;
     text-transform: capitalize;
-    border-width: 0px 0px 0px 0px;
-    border-color: var(--main-color);
+    color: #1e2553;
+    background-color: #fff;
+    border-color: #fff;
+    border-width: 1px;
     width: 100%;
     min-height: 60px;
-    border-radius: 3px 5px 5px 5px;
+    border-radius: 4px;
     padding: 5px 15px 5px 15px;
     opacity: 0.9;
+    box-shadow: 0px 1px 3px #f5f5f5;
 }
 
 .gf_button:hover {
     opacity: 1;
+}
+
+.disabled {
+    pointer-events: none;
 }
 
 .dotted {
@@ -575,4 +548,12 @@ img {
     background-size: contain;
     width: 60px;
     height: 60px;
+}
+
+.ic-qr-bank-pnhang {
+    background-repeat: no-repeat;
+    background-image: url("../Static/Images/img-qr-pnhang.JPG") !important;
+    background-size: contain;
+    width: 150px;
+    height: 150px;
 }
