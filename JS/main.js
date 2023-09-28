@@ -105,8 +105,8 @@ setupPhotoGallery = function () {
     var touchstartX = 0; // điểm bắt đầu
     var touchendX = 0; // điểm kết thúc
     var photoGalleryImages = [
-        "DSC_0981", "DSC_1023", "DSC_1238",
-        "DSC_1326"
+        "1", "2.1", "2", "3", "4", "5", "6", "8", "9",
+        "DSC_2821", "DSC_2879", "DSC_3304", "DSC_3678", "DSC_3742", "DSC_3928"
     ];
 
     // build ra danh sách các ảnh
@@ -119,6 +119,15 @@ setupPhotoGallery = function () {
         $("#photo_gallery_page .slideshow-container").append(imgHtml);
     }
 
+    for (var i = 0; i < photoGalleryImages.length; i++) {
+        var imgName = photoGalleryImages[i],
+            imgHtml = `<div class="thumbnail-wrapper">
+            <img class="demo cursor" src="` + `./Uploads/Thumbnail/${imgName}.jpg` + `" style="width:100%" thumbnail-index="` + (i + 1) + `">
+        </div>`;
+
+        $("#photo_gallery_page .thumbnail-images").append(imgHtml);
+    }
+
     function plusSlides(n) {
         slideIndex += n;
 
@@ -127,6 +136,7 @@ setupPhotoGallery = function () {
 
     function showSlides(n) {
         var slides = $("#photo_gallery_page .mySlides");
+        var dots = $("#photo_gallery_page .thumbnail-wrapper .demo");
 
         if (n > slides.length) {
             slideIndex = 1;
@@ -140,13 +150,26 @@ setupPhotoGallery = function () {
             $(slides[i]).hide();
         }
 
+        for (i = 0; i < dots.length; i++) {
+            $(dots[i]).removeClass("active");
+        }
+
         $(slides[slideIndex - 1]).show();
+        $(dots[slideIndex - 1]).addClass("active");
     }
 
+    // Thực hiện event click
     $("#photo_gallery_page .slideshow-container").on("click", ".prev", plusSlides.bind(this, -1));
 
     $("#photo_gallery_page .slideshow-container").on("click", ".next", plusSlides.bind(this, 1));
 
+    $("#photo_gallery_page .thumbnail-images").on("click", "img.cursor", function (evt) {
+        slideIndex = parseInt(this.attributes["thumbnail-index"].value);
+
+        showSlides(slideIndex);
+    });
+
+    // Thực hiện event lướt
     $("#photo_gallery_page .slideshow-container").on("touchstart", function (evt) {
         touchstartX = evt.changedTouches[0].screenX;
     });

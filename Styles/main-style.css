@@ -253,6 +253,33 @@ img {
     animation-duration: 1.5s;
 }
 
+.thumbnail-images {
+    display: flex;
+    width: 100%;
+    height: 173px;
+    overflow-x: auto;
+}
+
+.thumbnail-wrapper {
+    min-width: 20%;
+    width: 20%;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+    cursor: pointer;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+    opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+    opacity: 1;
+}
+
 @keyframes fade {
     from {
         opacity: .4
@@ -302,6 +329,7 @@ img {
 
 /* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
+
     .slideshow-container .prev,
     .slideshow-container .next {
         font-size: 11px
