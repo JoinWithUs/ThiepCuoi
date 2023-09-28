@@ -4,8 +4,6 @@ $(document).ready(function () {
     setupCalendar();
     setupPhotoGallery();
     setupResponseBox();
-
-    document.getElementById("appMomo").onclick = openStoreAction;
 });
 
 /**
@@ -267,56 +265,4 @@ getResponseBoxData = function () {
     });
 
     return data;
-}
-
-/**
- * sự kiện mở app
- */
-openAppAction = function () {
-    var buttonApp = this;
-    var a = null;
-    const routeParam = document.URL.match(/invite\/.+/)[0].split('/')[1];
-    const token = routeParam.split('?')[0];
-    const ua = window.navigator.userAgent;
-    var appUrl = buttonApp.getAttribute("androidappurl") + token;
-    var storeLink = buttonApp.getAttribute("AndroidStoreUrl");
-
-    if (/iPad|iPhone|iPod/.test(ua)) {
-        appUrl = buttonApp.getAttribute("IOSAppUrl") + token;
-        storeLink = buttonApp.getAttribute("IOSStoreUrl");
-    }
-
-    document.getElementsByTagName('body')[0].insertAdjacentHTML('beforeEnd', '<a id="linkApp" style="display:none" target="_blank" href="javascript:void(0)">')
-
-    a = document.getElementById('linkApp');
-    a.href = appUrl;
-    a.click();
-
-    //neu khong the mo app thi mo store (doi 3s)
-    setTimeout(function () {
-        if (document.hidden == false) {
-            window.location = storeLink;
-        }
-    }, 3000);
-}
-
-/**
- * sự kiện mở store
- */
-openStoreAction = function () {
-    var buttonApp = this;
-    var a = null;
-    var appUrl = null
-    const ua = window.navigator.userAgent;
-
-    if (/iPad|iPhone|iPod/.test(ua)) {
-        appUrl = buttonApp.getAttribute("IOSStoreUrl");
-    } else {
-        appUrl = buttonApp.getAttribute("AndroidStoreUrl");
-    }
-
-    document.getElementsByTagName('body')[0].insertAdjacentHTML('beforeEnd', '<a id="linkApp" style="display:none" target="_blank" href="javascript:void(0)">')
-    a = document.getElementById('linkApp');
-    a.href = appUrl;
-    a.click();
 }
