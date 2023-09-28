@@ -115,10 +115,6 @@ img {
     font-size: 18px;
 }
 
-.font-14 {
-    font-size: 14px;
-}
-
 .form-control {
     height: 55px;
     font-size: 18px;
@@ -191,7 +187,7 @@ img {
 
 /* Đặt lịch nhắc */
 .count-down-wrap {
-    display: inline-block;
+    /* display: inline-block; */
 }
 
 .count-down-wrap .time-left {
@@ -202,7 +198,7 @@ img {
     padding: 20px 5px;
     text-align: center;
     height: 115px;
-    width: 80px;
+    width: 16%;
     margin: 10px 8px 0px;
     border-radius: 10px;
     cursor: pointer;
@@ -234,6 +230,41 @@ img {
     line-height: 1em;
 }
 
+@media only screen and (max-width: 400px) {
+
+    .count-down-wrap .time-left {
+        font-size: 36px;
+        height: 88px;
+        padding: 16px 4px;
+        margin: 8px 6px 0px;
+    }
+
+    .count-down-wrap .time-left span.num {
+        padding-bottom: 8px;
+    }
+
+    .count-down-wrap .time-left span {
+        line-height: 0.8em;
+    }
+
+    .count-down-wrap .time-left span.count-label {
+        font-size: 13px;
+    }
+
+    .count-down-wrap .time-left span {
+        line-height: 0.8em;
+    }
+
+}
+
+@media only screen and (max-width: 300px) {
+
+    .count-down-wrap .time-left {
+        font-size: 32px;
+        height: 84px;
+    }
+}
+
 /* album ảnh */
 /* Slideshow container */
 .slideshow-container {
@@ -256,7 +287,7 @@ img {
 .thumbnail-images {
     display: flex;
     width: 100%;
-    height: 173px;
+    height: calc(var(--max-width) / 10 * 3);
     overflow-x: auto;
 }
 
@@ -395,6 +426,25 @@ img {
     background-repeat: no-repeat;
     left: 20px;
     top: 20px;
+}
+
+@media only screen and (max-width: 400px) {
+
+    .addevent {
+        font-size: 14px;
+    }
+
+    .addevent span {
+        line-height: 14px;
+        padding: 16px 16px 16px 38px;
+    }
+
+    .addevent:before {
+        width: 16px;
+        height: 16px;
+        left: 16px;
+        top: 16px;
+    }
 }
 
 .wrapper-ts {
@@ -584,4 +634,95 @@ img {
     background-size: contain;
     width: 150px;
     height: 150px;
+}
+
+@media only screen and (max-width: 400px) {
+
+    body,
+    input,
+    textarea,
+    button,
+    select {
+        font-size: 14px;
+        line-height: 1.2;
+    }
+
+    .box-wrapper .box-title {
+        font-size: 24px;
+    }
+
+    .wrapper-ts {
+        padding: 16px 12px;
+        height: 150px;
+    }
+
+    #option-1:checked:checked~.option-1,
+    #option-2:checked:checked~.option-2 {
+        height: 108px;
+    }
+
+    .wrapper-ts .option span {
+        font-size: 13px;
+    }
+
+    .wrapper-ts .option {
+        width: 120px;
+        margin: 8px 8px;
+        border-radius: 5px;
+        padding: 12px 8px;
+        height: 96px;
+    }
+
+    .wrapper-ts .option .dot {
+        margin-bottom: 8px;
+    }
+
+    .box-invite {
+        padding: 12px 0px 8px 0px;
+    }
+
+    .wrapper-ts-boxp {
+        padding: 16px 12px;
+    }
+
+    .wrapper-ts-boxp .optionboxp svg {
+        width: 38px;
+    }
+
+    .wrapper-ts-boxp .optionboxp span {
+        font-size: 12px;
+    }
+
+    .form-control {
+        height: 44px;
+        font-size: 15px;
+        margin-top: 6px;
+    }
+
+    .gf_button {
+        font-size: 18px;
+        min-height: 48px;
+        border-radius: 4px;
+        padding: 4px 12px 4px 12px;
+    }
+
+    .font-18 {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+
+    body,
+    input,
+    textarea,
+    button,
+    select {
+        font-size: 12px;
+        line-height: 1;
+    }
+
+    .box-wrapper .box-title {
+        font-size: 20px;
+    }
 }
