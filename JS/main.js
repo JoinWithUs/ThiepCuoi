@@ -132,6 +132,24 @@ setupPhotoGallery = function () {
         slideIndex += n;
 
         showSlides(slideIndex);
+
+        // Thực hiện focus tới thumbnail tương ứng
+        var dots = $("#photo_gallery_page .thumbnail-wrapper .demo");
+        var scrollArea = $("#photo_gallery_page .thumbnail-images");
+        var curDotRect = dots[slideIndex - 1].getBoundingClientRect(),
+            curDotLeft = curDotRect.left,
+            curDotWidth = curDotRect.width,
+            maxRight = scrollArea.width();
+
+        // bị ẩn bên trái
+        if (curDotLeft < 0) {
+            scrollArea.scrollLeft((slideIndex - 1) * curDotWidth);
+        }
+
+        // bị ẩn bên phải
+        if (curDotLeft + curDotWidth > maxRight) {
+            scrollArea.scrollLeft((slideIndex - 5) * curDotWidth);
+        }
     }
 
     function showSlides(n) {
@@ -175,7 +193,7 @@ setupPhotoGallery = function () {
     });
 
     $("#photo_gallery_page .slideshow-container").on("touchend", function (evt) {
-        touchendX = e.changedTouches[0].screenX;
+        touchendX = evt.changedTouches[0].screenX;
 
         // swiped left
         if (touchendX < touchstartX - 50) {
