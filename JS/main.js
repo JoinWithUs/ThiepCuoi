@@ -10,7 +10,7 @@ $(document).ready(function () {
  * Cài đặt bộ đếm thời gian
  */
 setupCounter = function () {
-    var time = "2023-10-20T17:00:00";
+    var time = "2023-12-24T17:00:00";
     var countDownDate = new Date(time).getTime();
 
     // Update the count down every 1 second
